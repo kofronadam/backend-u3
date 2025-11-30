@@ -9,22 +9,19 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// file DB (db.json bude v kořeni projektu)
 const dbFile = path.join(__dirname, '..', 'db.json');
 const adapter = new JSONFile(dbFile);
 
-// IMPORTANT: pass default data as second argument to Low to avoid "missing default data" error
 const db = new Low(adapter, { lists: [] });
 
 async function initDB() {
-  // read existing file (if any) and ensure db.data exists
+
   await db.read();
   db.data = db.data || { lists: [] };
   await db.write();
 }
 initDB();
 
-// Helpers
 async function ensureDB() {
   await db.read();
   db.data = db.data || { lists: [] };
@@ -43,9 +40,7 @@ function isValidQuantity(v) {
   return typeof v === 'number' && Number.isFinite(v) && v >= 0;
 }
 
-// --- Endpoints (plain REST, manual validation) ---
-
-// GET /lists - všechny seznamy (volitelně filtrovat podle owner query param)
+// GET /lists - všechny seznamy
 app.get('/lists', async (req, res) => {
   await ensureDB();
   const { owner } = req.query;
