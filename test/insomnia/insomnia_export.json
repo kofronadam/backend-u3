@@ -1,0 +1,272 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-12-13T17:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_get_lists",
+      "parentId": "fld_shopping_lists",
+      "modified": 1702489200000,
+      "created": 1702489200000,
+      "url": "{{ _.base_url }}/lists",
+      "name": "Get All Lists",
+      "description": "Retrieve all shopping lists. Optionally filter by owner.",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "owner",
+          "value": "",
+          "description": "Filter by owner name",
+          "disabled": true
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1702489200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_list",
+      "parentId": "fld_shopping_lists",
+      "modified": 1702489300000,
+      "created": 1702489300000,
+      "url": "{{ _.base_url }}/lists",
+      "name": "Create List",
+      "description": "Create a new shopping list.",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Groceries\",\n  \"owner\": \"John Doe\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1702489300000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_list",
+      "parentId": "fld_shopping_lists",
+      "modified": 1702489400000,
+      "created": 1702489400000,
+      "url": "{{ _.base_url }}/lists/{{ _.list_id }}",
+      "name": "Get List by ID",
+      "description": "Retrieve a single shopping list by its ID.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1702489400000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_list",
+      "parentId": "fld_shopping_lists",
+      "modified": 1702489500000,
+      "created": 1702489500000,
+      "url": "{{ _.base_url }}/lists/{{ _.list_id }}",
+      "name": "Update List",
+      "description": "Update a shopping list (name or owner).",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Updated Groceries\",\n  \"owner\": \"Jane Doe\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1702489500000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_list",
+      "parentId": "fld_shopping_lists",
+      "modified": 1702489600000,
+      "created": 1702489600000,
+      "url": "{{ _.base_url }}/lists/{{ _.list_id }}",
+      "name": "Delete List",
+      "description": "Delete a shopping list by its ID.",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1702489600000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_item",
+      "parentId": "fld_shopping_lists",
+      "modified": 1702489700000,
+      "created": 1702489700000,
+      "url": "{{ _.base_url }}/lists/{{ _.list_id }}/items",
+      "name": "Add Item to List",
+      "description": "Add a new item to a shopping list.",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Milk\",\n  \"quantity\": 2\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1702489700000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_item",
+      "parentId": "fld_shopping_lists",
+      "modified": 1702489800000,
+      "created": 1702489800000,
+      "url": "{{ _.base_url }}/lists/{{ _.list_id }}/items/{{ _.item_id }}",
+      "name": "Update Item",
+      "description": "Update an item in a shopping list.",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Whole Milk\",\n  \"quantity\": 3,\n  \"checked\": true\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1702489800000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_item",
+      "parentId": "fld_shopping_lists",
+      "modified": 1702489900000,
+      "created": 1702489900000,
+      "url": "{{ _.base_url }}/lists/{{ _.list_id }}/items/{{ _.item_id }}",
+      "name": "Delete Item",
+      "description": "Delete an item from a shopping list.",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1702489900000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_shopping_lists",
+      "parentId": "wrk_shopping_lists",
+      "modified": 1702489000000,
+      "created": 1702489000000,
+      "name": "Shopping Lists API",
+      "description": "REST API endpoints for managing shopping lists",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1702489000000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_shopping_lists",
+      "parentId": null,
+      "modified": 1702488900000,
+      "created": 1702488900000,
+      "name": "Shopping Lists Backend",
+      "description": "Backend API for shopping lists application",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_base",
+      "parentId": "wrk_shopping_lists",
+      "modified": 1702488950000,
+      "created": 1702488950000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:4000",
+        "list_id": "",
+        "item_id": ""
+      },
+      "dataPropertyOrder": {
+        "&": ["base_url", "list_id", "item_id"]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1702488950000,
+      "_type": "environment"
+    }
+  ]
+}
